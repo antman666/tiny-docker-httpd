@@ -11,9 +11,9 @@ RUN apk add --no-cache build-base git \
 FROM scratch
 # set label
 LABEL maintainer="NG6"
-WORKDIR /wwww
+WORKDIR /www
 COPY --from=builder /src/darkhttpd/darkhttpd-static /darkhttpd
-EXPOSE 80
-VOLUME [ "/wwww" ]
+EXPOSE 80 443
+VOLUME [ "/www" ]
 ENTRYPOINT ["/darkhttpd"]
 CMD [ "/www" ]
