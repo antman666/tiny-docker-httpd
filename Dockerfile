@@ -1,4 +1,4 @@
-FROM alpine as builder
+FROM alpine AS builder
 WORKDIR /src
 
 RUN apk add --no-cache build-base git \
