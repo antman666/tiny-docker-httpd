@@ -10,10 +10,10 @@ RUN apk add --no-cache build-base git \
 # Just the static binary
 FROM scratch
 # set label
-LABEL maintainer="NG6"
+LABEL maintainer="antman666"
 WORKDIR /www
 COPY --from=builder /src/darkhttpd/darkhttpd-static /darkhttpd
-EXPOSE 80 443
+EXPOSE 6880
 VOLUME [ "/www" ]
-ENTRYPOINT ["/darkhttpd"]
+ENTRYPOINT [ "/darkhttpd" ]
 CMD [ "/www" ]
