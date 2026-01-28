@@ -29,8 +29,8 @@ FROM scratch
 # set label
 LABEL maintainer="antman666"
 WORKDIR /www
-COPY --from=builder /src/darkhttpd/darkhttpd-static /darkhttpd
+COPY --from=builder /src/darkhttpd/darkhttpd /darkhttpd
 EXPOSE 6880
 VOLUME [ "/www" ]
 ENTRYPOINT [ "/darkhttpd" ]
-CMD [ "/www" ]
+CMD [ "/www", "--chroot" ]
